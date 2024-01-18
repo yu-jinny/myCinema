@@ -20,5 +20,113 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "myCinema/ViewController/MovieBookingVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "MovieBookingVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336 - cff0d173392b87e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieBookingVC.alertController.getter : Swift.Optional&lt;__C.UIAlertController&gt;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/ViewController/MovieBookingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336 - a794b1bc8795e252"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieBookingVC.alertController.setter : Swift.Optional&lt;__C.UIAlertController&gt;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/ViewController/MovieBookingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336 - 2fa21e9780ac1f63"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieBookingVC.alertController.modify : Swift.Optional&lt;__C.UIAlertController&gt;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/ViewController/MovieBookingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336 - ade2329fe3b46654"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieBookingVC.alertController.modify : Swift.Optional&lt;__C.UIAlertController&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336 - d9e151fc59fc749c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieBookingVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; myCinema.MovieBookingVC"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/ViewController/MovieBookingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "2FF147E3-3DCF-4BDA-97F4-D92643C14336 - 951b856e1ca9d72a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieBookingVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;myCinema.MovieBookingVC&gt;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/ViewController/MovieBookingVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

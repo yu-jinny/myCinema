@@ -191,12 +191,6 @@ class MovieDetailVC: UIViewController {
                 print("Error fetching release dates: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
-            
-            // API 응답 확인을 위한 디버깅 코드
-            if let responseString = String(data: data, encoding: .utf8) {
-                print("API Response (Release Dates): \(responseString)")
-            }
-            
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let releaseDates = json as? [String: Any], let results = releaseDates["results"] as? [[String: Any]], let firstRelease = results.first, let releaseDatesArray = firstRelease["release_dates"] as? [[String: Any]], let firstReleaseDate = releaseDatesArray.first, let releaseDate = firstReleaseDate["release_date"] as? String {

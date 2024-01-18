@@ -71,8 +71,11 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
         for movieData in jsonArray {
             if let id = movieData["id"] as? Int,
                let title = movieData["title"] as? String,
+               let releaseDate = movieData["release_date"] as? String,
+               let rating = movieData["vote_average"] as? Double,
+               let detail = movieData["overview"] as? String,
                let posterPath = movieData["poster_path"] as? String {
-                let movie = Movie(id: id, title: title, posterPath: posterPath)
+                let movie = Movie(id: id, title: title, posterPath: posterPath, rating: rating, detail: detail,releaseDate: releaseDate )
                 movies.append(movie)
             }
         }
@@ -104,7 +107,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
             do {
                 // JSON 데이터 파싱
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print("JSON Data: \(json)")
                 // 파싱된 데이터를 Movie 객체로 변환
                 if let jsonArray = json as? [String: Any], let results = jsonArray["results"] as? [[String: Any]] {
                     let movies = self.parseMovieData(jsonArray: results)
@@ -151,9 +153,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
                 // JSON 데이터 파싱
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 if let movieDetails = json as? [String: Any] {
-                    // 여기에서 movieDetails를 활용하여 상세 정보 업데이트
-                    // 예를 들면, 영화 제목, 설명, 출시일 등을 가져와서 업데이트할 수 있습니다.
-                    print("Movie details: \(movieDetails)")
                 }
             } catch {
                 print("Error parsing movie details: \(error.localizedDescription)")
@@ -299,9 +298,7 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Cell selected at section \(collectionView.tag), item \(indexPath.item)")
         let selectedMovie: Movie
-
         switch collectionView.tag {
         case 0:
             selectedMovie = popularMoviesData[indexPath.item]
@@ -350,10 +347,16 @@ class Movie {
     let id: Int
     let title: String
     let posterPath: String?
+    let rating: Double
+    let detail: String
+    let releaseDate: String
 
-    init(id: Int, title: String, posterPath: String?) {
+    init(id: Int, title: String, posterPath: String?,rating: Double, detail: String, releaseDate: String ) {
         self.id = id
         self.title = title
         self.posterPath = posterPath
+        self.rating = rating
+        self.detail = detail
+        self.releaseDate = releaseDate
     }
 }

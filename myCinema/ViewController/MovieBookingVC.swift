@@ -8,8 +8,10 @@ import UIKit
 
 class MovieBookingVC: UIViewController {
     
+    // UIAlertController를 클래스 레벨에 선언
+    private var alertController: UIAlertController?
     // 상영시간 목록을 담을 배열
-    let showingTimes = ["6:00", "10:00", "13:00", "16:00", "19:00", "22:00"]
+    let showingTimes = ["0:00" ,"6:00", "10:00", "13:00", "16:00", "19:00", "22:00"]
     // 영화명을 표시할 라벨
     var titleLabel: UILabel!
     // 선택된 상영시간을 표시할 라벨
@@ -27,6 +29,12 @@ class MovieBookingVC: UIViewController {
     var totalPrice: Double = 0.0
     // 결제할 금액을 표시할 라벨
     var priceLabel: UILabel!
+    // DateFormatter를 클래스 레벨에 선언
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd EEE"
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
