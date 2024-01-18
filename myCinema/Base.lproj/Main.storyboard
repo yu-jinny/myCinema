@@ -1,24 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DRd-5u-0jP">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="BYZ-38-t0r" customClass="LoginVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AoL-c2-67o"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21" y="-9"/>
+        </scene>
+        <!--Movie ListVC-->
+        <scene sceneID="qJr-05-SEW">
+            <objects>
+                <viewController storyboardIdentifier="MovieListVC" id="khL-zH-lmX" customClass="MovieListVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oe6-Co-Wgx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Mmv-Fc-Nky"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p0l-SU-KTb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n4r-PH-wZz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="-9"/>
+        </scene>
+        <!--영화 검색-->
+        <scene sceneID="crk-Dc-dfN">
+            <objects>
+                <viewController storyboardIdentifier="MovieSearchingVC" id="IyN-B9-Uvx" customClass="MovieSearchingVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6I0-Nc-Cpf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wWc-ad-iaG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="영화 검색" image="magnifyingglass" catalog="system" id="F9V-3r-A3r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPM-G2-cQy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="-673"/>
+        </scene>
+        <!--마이페이지-->
+        <scene sceneID="OqD-Xh-ggs">
+            <objects>
+                <viewController storyboardIdentifier="MyPageVC" id="F6s-XN-sVP" customClass="MyPageVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hcx-aJ-0eT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="5uY-ql-u4t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="person.fill" catalog="system" id="seD-l8-6rE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEi-Jc-YkG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2196" y="-673"/>
+        </scene>
+        <!--JoinVC-->
+        <scene sceneID="FaS-oo-g37">
+            <objects>
+                <viewController storyboardIdentifier="JoinVC" id="YCS-6r-yGa" customClass="JoinVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z28-HT-pp9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ha1-gM-DTj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aMW-IF-Mn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="651"/>
+        </scene>
+        <!--Movie DetailVC-->
+        <scene sceneID="1RR-6P-Zhc">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailVC" id="Axs-U4-E2T" customClass="MovieDetailVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="62T-eQ-5d8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="W9D-py-4Fn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Opf-64-1kb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="651"/>
+        </scene>
+        <!--Movie BookingVC-->
+        <scene sceneID="vm7-HR-e6x">
+            <objects>
+                <viewController storyboardIdentifier="MovieBookingVC" id="ea3-T7-pSo" customClass="MovieBookingVC" customModule="myCinema" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kOW-RE-S8y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7pC-9b-3z4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0u-gh-heI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="1315"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LPl-G5-5cb">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DRd-5u-0jP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ilQ-2m-bMJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pHC-1D-SKQ" kind="relationship" relationship="viewControllers" id="qM0-i3-4HY"/>
+                        <segue destination="8oY-TX-rqK" kind="relationship" relationship="viewControllers" id="RcR-le-s8D"/>
+                        <segue destination="IyN-B9-Uvx" kind="relationship" relationship="viewControllers" id="eQO-O1-PZN"/>
+                        <segue destination="F6s-XN-sVP" kind="relationship" relationship="viewControllers" id="LrH-Wa-nfX"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJP-cJ-s9s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="-1404"/>
+        </scene>
+        <!--영화 목록-->
+        <scene sceneID="TT6-gQ-GHC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nt9-o5-3m1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8oY-TX-rqK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="영화 목록" image="movieclapper.fill" catalog="system" id="UsJ-7e-0sI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QRR-2y-ef5">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="khL-zH-lmX" kind="relationship" relationship="rootViewController" id="XnT-AF-RbF"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="792" y="-673"/>
+        </scene>
+        <!--로그인-->
+        <scene sceneID="wqF-he-Aaf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pHC-1D-SKQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="로그인" image="key" catalog="system" id="zwx-Zp-J85"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v7G-A7-cWv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FGJ-tt-52L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQK-Ys-QNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="-673"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="key" catalog="system" width="85" height="128"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="movieclapper.fill" catalog="system" width="128" height="113"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
