@@ -128,5 +128,114 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85380513-9266-4F58-BF19-75C15CCDC62F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "myCinema/Controller/MovieDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76965A3D-C335-48E3-87D6-6E6380D29E12"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "myCinema/Controller/MovieDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "76965A3D-C335-48E3-87D6-6E6380D29E12 - eb50d73cdb0ccf51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieDetailVC.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; myCinema.MovieDetailVC"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "76965A3D-C335-48E3-87D6-6E6380D29E12 - 80e4249b8066d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieDetailVC.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; myCinema.MovieDetailVC"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "76965A3D-C335-48E3-87D6-6E6380D29E12 - 762e37c02b5e8269"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieDetailVC.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;myCinema.MovieDetailVC&gt;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "76965A3D-C335-48E3-87D6-6E6380D29E12 - 8abe5e3771c8bc67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieDetailVC.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;myCinema.MovieDetailVC&gt;"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "76965A3D-C335-48E3-87D6-6E6380D29E12 - bf3fd52b80277e33"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "myCinema.MovieDetailVC.__deallocating_deinit"
+                  moduleName = "myCinema"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/t2023-m0028/Desktop/%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%85%E1%85%B3%E1%84%90%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A5%E1%86%B8/myCinema/myCinema/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

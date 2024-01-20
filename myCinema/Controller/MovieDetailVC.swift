@@ -9,14 +9,16 @@ import UIKit
 
 class MovieDetailVC: UIViewController {
     
+    let networkManager = NetworkManager.shared
     var selectedMovie: Movie?
     
     // 세부 정보 레이블
     let detailsLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.textAlignment = .center // 가운데 정렬
+        label.contentMode = .top // 라벨 위쪽부터 정렬
+        label.font = UIFont.systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -24,7 +26,7 @@ class MovieDetailVC: UIViewController {
     // 출시일 정보를 표시하는 레이블
     let releaseDateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -33,7 +35,7 @@ class MovieDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hidesBottomBarWhenPushed = true
-
+        
         view.backgroundColor = .white
         
         // 영화 포스터 이미지 뷰
@@ -46,16 +48,13 @@ class MovieDetailVC: UIViewController {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        titleLabel.numberOfLines = 2
+        titleLabel.numberOfLines = 0
         titleLabel.textColor = UIColor(hex: "0x6aa3ff")
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         
         // API 데이터를 이용한 영화 세부 정보 레이블
         view.addSubview(detailsLabel)
-        
-        // Rated 정보를 UI에 표시하는 레이블
-        //view.addSubview(ratedInfoLabel)
         
         // 출시일 정보를 표시하는 레이블
         view.addSubview(releaseDateLabel)
@@ -72,7 +71,7 @@ class MovieDetailVC: UIViewController {
         
         // NSLayoutConstraint를 이용하여 레이아웃 설정
         NSLayoutConstraint.activate([
-            posterImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            posterImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             posterImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             posterImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             posterImageView.heightAnchor.constraint(equalToConstant: 350),
@@ -80,12 +79,13 @@ class MovieDetailVC: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            titleLabel.heightAnchor.constraint(equalToConstant: 60),
             
-            detailsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            detailsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
             detailsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             detailsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            detailsLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 160),
             
-        
             bookButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             bookButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             bookButton.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -96,14 +96,17 @@ class MovieDetailVC: UIViewController {
         ])
         
         // 선택된 영화 데이터를 기반으로 UI 업데이트
-                if let selectedMovie = selectedMovie {
-                    titleLabel.text = selectedMovie.title
-
-                    // 영화 포스터 이미지 로드
-                    loadImage(for: selectedMovie, into: posterImageView)
-                    
-                    // 영화 세부 정보를 가져와서 detailsLabel 업데이트
-                    fetchMovieDetails(movieID: selectedMovie.id)
+        if let selectedMovie = selectedMovie {
+            titleLabel.text = selectedMovie.title
+            
+            // 영화 포스터 이미지 로드
+            loadImage(for: selectedMovie, into: posterImageView)
+            
+            // 영화 세부 정보를 가져와서 detailsLabel 업데이트
+            fetchMovieDetails(movieID: selectedMovie.id)
+            
+            // 출시일 정보를 가져와서 releaseDateLabel 업데이트
+            fetchReleaseDates(movieID: selectedMovie.id)
         }
     }
     
@@ -122,101 +125,50 @@ class MovieDetailVC: UIViewController {
             }
         }
     }
-
     
     // 영화 세부 정보를 가져오는 메서드
     func fetchMovieDetails(movieID: Int) {
-        let apiKey = "a4da431c6791ead04a4fed52ad08e4fc"
-        let urlString = "https://api.themoviedb.org/3/movie/\(movieID)?api_key=\(apiKey)"
-        
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL: \(urlString)")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error fetching movie details: \(error?.localizedDescription ?? "Unknown error")")
+        networkManager.fetchMovieDetails(movieID: movieID) { [weak self] movieDetails, error in
+            guard let self = self else { return }
+            if let error = error {
+                print("Error fetching movie details: \(error.localizedDescription)")
                 return
             }
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                if let movieDetails = json as? [String: Any] {
-                    if let overview = movieDetails["overview"] as? String {
-                        DispatchQueue.main.async {
-                            self.detailsLabel.text = overview
-                        }
-                    }
+
+            if let overview = movieDetails?["overview"] as? String { // 변경된 부분
+                DispatchQueue.main.async {
+                    self.detailsLabel.text = overview
                 }
-            } catch {
-                print("Error parsing movie details: \(error.localizedDescription)")
-            }
-        }.resume()
-    }
-    
-    // 영화 포스터 이미지 로드
-    func loadImage(for movie: Movie, into imageView: UIImageView) {
-        if let posterPath = movie.posterPath {
-            let posterURL = "https://image.tmdb.org/t/p/w500\(posterPath)"
-            if let url = URL(string: posterURL) {
-                URLSession.shared.dataTask(with: url) { data, response, error in
-                    guard let data = data, error == nil else {
-                        print("Error loading image: \(error?.localizedDescription ?? "Unknown error")")
-                        return
-                    }
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async {
-                        imageView.image = image
-                        // 영화 포스터 이미지 로드 이후에 출시일 정보를 가져오도록 이동
-                        self.fetchReleaseDates(movieID: movie.id)
-                    }
-                }.resume() // 이 부분을 추가하세요
             }
         }
     }
     
     // 출시일 정보를 가져오는 메서드
     func fetchReleaseDates(movieID: Int) {
-        let apiKey = "a4da431c6791ead04a4fed52ad08e4fc"
-        let urlString = "https://api.themoviedb.org/3/movie/\(movieID)/release_dates?api_key=\(apiKey)"
-        
-        guard let url = URL(string: urlString) else {
-            print("Invalid URL: \(urlString)")
-            return
+        networkManager.fetchReleaseDates(movieID: movieID) { [weak self] releaseDate in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.displayReleaseDate(releaseDate: releaseDate)
+            }
         }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                print("Error fetching release dates: \(error?.localizedDescription ?? "Unknown error")")
-                return
-            }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                if let releaseDates = json as? [String: Any], let results = releaseDates["results"] as? [[String: Any]], let firstRelease = results.first, let releaseDatesArray = firstRelease["release_dates"] as? [[String: Any]], let firstReleaseDate = releaseDatesArray.first, let releaseDate = firstReleaseDate["release_date"] as? String {
-                    
-                    // "T" 이후의 부분을 제외하고 표시
-                    let formattedDate = releaseDate.components(separatedBy: "T").first ?? "Unknown Release Date"
-                    
-                    DispatchQueue.main.async {
-                        // 출시일 정보를 UI에 표시
-                        self.displayReleaseDate(releaseDate: formattedDate)
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        self.displayReleaseDate(releaseDate: "Unknown Release Date")
-                    }
-                }
-            } catch {
-                print("Error parsing release dates: \(error.localizedDescription)")
-            }
-        }.resume()
     }
-
-            // 출시일 정보를 UI에 표시하는 메서드
-            func displayReleaseDate(releaseDate: String) {
+    
+    // 출시일 정보를 UI에 표시하는 메서드
+    func displayReleaseDate(releaseDate: String?) {
+        releaseDateLabel.text = "출시일: \(releaseDate ?? "Unknown Release Date")"
+    }
+    // 영화 포스터 이미지를 가져와서 이미지 뷰에 설정하는 메서드
+    func loadImage(for movie: Movie, into imageView: UIImageView) {
+        if let posterPath = movie.posterPath {
+            let posterURL = "https://image.tmdb.org/t/p/w500\(posterPath)"
+            
+            networkManager.loadImage(from: posterURL) { [weak self] image in
+                guard let self = self else { return }
+                
                 DispatchQueue.main.async {
-                    self.releaseDateLabel.text = "출시일: \(releaseDate)"
+                    imageView.image = image
                 }
             }
         }
+    }
+}
