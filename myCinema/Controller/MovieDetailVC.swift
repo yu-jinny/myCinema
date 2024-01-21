@@ -12,17 +12,16 @@ class MovieDetailVC: UIViewController {
     let networkManager = NetworkManager.shared
     var selectedMovie: Movie?
     
-    // 세부 정보 레이블
-    let detailsLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textAlignment = .center // 가운데 정렬
-        label.contentMode = .top // 라벨 위쪽부터 정렬
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    // 세부 정보 텍스트뷰
+    let detailTextView: UITextView = {
+        let textView = UITextView()
+        textView.isEditable = false
+        textView.textAlignment = .center
+        textView.font = UIFont.systemFont(ofSize: 18)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
-    
+
     // 출시일 정보를 표시하는 레이블
     let releaseDateLabel: UILabel = {
         let label = UILabel()
@@ -53,8 +52,8 @@ class MovieDetailVC: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         
-        // API 데이터를 이용한 영화 세부 정보 레이블
-        view.addSubview(detailsLabel)
+        // API 데이터를 이용한 영화 세부 정보 텍스트뷰
+        view.addSubview(detailTextView)
         
         // 출시일 정보를 표시하는 레이블
         view.addSubview(releaseDateLabel)
@@ -81,10 +80,10 @@ class MovieDetailVC: UIViewController {
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             titleLabel.heightAnchor.constraint(equalToConstant: 60),
             
-            detailsLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            detailsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            detailsLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            detailsLabel.heightAnchor.constraint(lessThanOrEqualToConstant: 160),
+            detailTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            detailTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            detailTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            detailTextView.heightAnchor.constraint(lessThanOrEqualToConstant: 160),
             
             bookButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             bookButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -102,7 +101,7 @@ class MovieDetailVC: UIViewController {
             // 영화 포스터 이미지 로드
             loadImage(for: selectedMovie, into: posterImageView)
             
-            // 영화 세부 정보를 가져와서 detailsLabel 업데이트
+            // 영화 세부 정보를 가져와서 ddetailTextView 업데이트
             fetchMovieDetails(movieID: selectedMovie.id)
             
             // 출시일 정보를 가져와서 releaseDateLabel 업데이트
@@ -137,7 +136,7 @@ class MovieDetailVC: UIViewController {
 
             if let overview = movieDetails?["overview"] as? String { // 변경된 부분
                 DispatchQueue.main.async {
-                    self.detailsLabel.text = overview
+                    self.detailTextView.text = overview
                 }
             }
         }
