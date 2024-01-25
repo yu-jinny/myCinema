@@ -74,7 +74,7 @@ class MovieBookingVC: UIViewController {
         titleLabel.text = selectedMovie?.title
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel.textAlignment = .right
-        titleLabel.numberOfLines = 2
+        titleLabel.numberOfLines = 0
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         
@@ -186,6 +186,7 @@ class MovieBookingVC: UIViewController {
             
             titleLabel.topAnchor.constraint(equalTo: stackView.topAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 80),
             
             stepper.centerYAnchor.constraint(equalTo: peopleLabel.centerYAnchor),
             stepper.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
