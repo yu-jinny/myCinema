@@ -66,8 +66,48 @@ class LoginVC: UIViewController {
     }
 
     @objc func loginButtonTapped() {
-        print("로그인 버튼이 눌렸습니다.")
+        // 사용자가 입력한 정보 가져오기
+        guard let username = usernameTextField.text,
+              let password = passwordTextField.text else {
+            print("아이디와 비밀번호를 입력해주세요.")
+            return
+        }
+
+        // 저장된 사용자 정보 불러오기
+        if let savedUser = UserDefaultsManager.shared.loadUserInfo() {
+            // 입력한 정보와 저장된 정보 비교
+            if username == savedUser.username && password == savedUser.password {
+                // 로그인이 성공하면 사용자 이름을 가져와서 알림창에 표시
+                let alertController = UIAlertController(
+                    title: "로그인 성공",
+                    message: "\(savedUser.name) 님, 반갑습니다.",
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "확인", style: .default) { _ in
+                    // MovieListVC를 초기화
+                    let movieListVC = MovieListVC()
+
+                    // 네비게이션 컨트롤러가 존재하는지 확인
+                    if let navigationController = self.navigationController {
+                        // 네비게이션 스택에 MovieListVC를 추가
+                        navigationController.pushViewController(movieListVC, animated: true)
+                    } else {
+                        // 네비게이션 컨트롤러가 없다면 새로 생성하여 rootViewController로 설정
+                        let navigationController = UINavigationController(rootViewController: movieListVC)
+                        navigationController.modalPresentationStyle = .fullScreen
+                        self.present(navigationController, animated: true, completion: nil)
+                    }
+                })
+                present(alertController, animated: true, completion: nil)
+            } else {
+                print("아이디 또는 비밀번호가 일치하지 않습니다.")
+            }
+        } else {
+            print("등록된 사용자 정보가 없습니다.")
+        }
     }
+
+
 
     @objc func signUpButtonTapped() {
         let joinVC = JoinVC()

@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="-9"/>
+            <point key="canvasLocation" x="85" y="-9"/>
         </scene>
         <!--Movie ListVC-->
         <scene sceneID="qJr-05-SEW">
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMW-IF-Mn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="651"/>
+            <point key="canvasLocation" x="85" y="651"/>
         </scene>
         <!--Movie DetailVC-->
         <scene sceneID="1RR-6P-Zhc">
@@ -178,6 +178,7 @@
         <!--로그인-->
         <scene sceneID="wqF-he-Aaf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQK-Ys-QNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pHC-1D-SKQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="로그인" image="key" catalog="system" id="zwx-Zp-J85"/>
                     <toolbarItems/>
@@ -190,9 +191,8 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FGJ-tt-52L"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jQK-Ys-QNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21" y="-673"/>
+            <point key="canvasLocation" x="85" y="-673"/>
         </scene>
     </scenes>
     <resources>

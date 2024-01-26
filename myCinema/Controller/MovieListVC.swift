@@ -78,7 +78,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate,
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hidesBottomBarWhenPushed = true
 
         setupTableView()
         fetchMovieData(endpoint: "popular", section: 0)
